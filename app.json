@@ -1,4 +1,7 @@
 {
  "name":"My first server"
  "Description":"this is my test server for Heroku"
- "repository":"
+ "repository":"https://github.com/anantsingh11/herokutest.git"
+ "logo":"https://pm1.narvii.com/6480/83fe70009b0292a60f5a185ec3e3ccb99514fbfd_hq.jpg"
+ "keywords": ["python", "Test", "Application"]
+}
