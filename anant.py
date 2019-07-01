@@ -1,19 +1,17 @@
 import socket
 
-serv = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-
-serv.bind(('127.0.0.2',8080))
-serv.listen(5)
-
+HOST = '127.0.0.1'
+PORT = 54321
+BUFFER_SIZE = 1024
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((HOST, PORT))
+print('Listen for incoming connections')
+s.listen(1)
 while True:
-  conn, addr = serv.accept()from client=''
-  while True:
-    data = conn.recv(4096) 
-    if not data: break
-      from_client += data
-      print from_client
-      
-      conn.send("I am SERVER\n")
-    
+    conn, addr = s.accept()
+    print ('Client connected with ' , addr)
+    data = conn.recv(BUFFER_SIZE)
+    if data:
+        print('Client to Server: ' , data)
+        conn.send(data.upper())
 conn.close()
-print'client disconnected'
